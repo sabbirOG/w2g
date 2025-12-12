@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | W2G</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">W2G</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </nav>
+    <main class="form-section">
+        <div class="waste-form card" style="max-width: 340px;">
+            <h2>Login to W2G</h2>
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required autocomplete="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password">
+                <button type="submit" class="btn primary">Login</button>
+            </form>
+            <div id="loginError" class="prediction-result" style="color:#c00;"></div>
+            <div style="margin-top:18px; font-size:0.98em; color:#757575;">
+                <strong>Demo credentials:</strong><br>
+                Username: <b>demo</b><br>
+                Password: <b>demo123</b>
+            </div>
+            <div style="margin-top:18px;">
+                <a href="signup.html">Don't have an account? Sign up</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 W2G. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

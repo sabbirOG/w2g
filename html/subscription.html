@@ -1,0 +1,50 @@
+    <script src="../js/auth.js"></script>
+    <script>redirectIfNotLoggedIn();</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2G - Gas Subscription</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Poppins:700|Roboto:400|Open+Sans:400&display=swap" rel="stylesheet">
+    <script defer src="../js/main.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">W2G</div>
+        <ul class="nav-links">
+            <li><a href="waste.html">Waste Submission</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="subscription.html" class="active">Subscription</a></li>
+            <li><a href="prediction.html">AI Prediction</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" onclick="w2gLogout()">Logout</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+    <main class="subscription-section">
+        <div class="container">
+            <h2>Gas Usage & Subscription</h2>
+            <div class="subscription-card card">
+                <h3>Current Plan: <span class="badge">Family Plus</span></h3>
+                <p>Monthly Usage: <span class="usage">32 m³</span></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 64%"></div>
+                </div>
+                <p>Next Refill: <strong>Jan 5, 2026</strong></p>
+                <button class="btn primary">Upgrade Plan</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 W2G. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

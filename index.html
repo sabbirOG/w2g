@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2G - Waste to Gas | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Poppins:700|Roboto:400|Open+Sans:400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/impact-charts.js"></script>
+</head>
+<body>
+        <script>
+            // If already logged in, redirect to dashboard
+            if (localStorage.getItem('w2g_logged_in') === 'true') {
+                window.location.href = 'html/dashboard.html';
+            }
+            // Hide all nav links except Home/Get Started if not logged in
+            if (!localStorage.getItem('w2g_logged_in') || localStorage.getItem('w2g_logged_in') !== 'true') {
+                var navLinks = document.getElementById('nav-links');
+                if (navLinks) {
+                    var keep = ['Home', 'Get Started'];
+                    Array.from(navLinks.children).forEach(function(li) {
+                        var a = li.querySelector('a');
+                        if (a && !keep.includes(a.textContent.trim())) {
+                            li.style.display = 'none';
+                        } else {
+                            li.style.display = '';
+                        }
+                    });
+                }
+            }
+        </script>
+    <header class="hero">
+        <div class="hero-content" style="max-width:650px;margin:0 auto;text-align:center;padding:64px 0 48px 0;">
+            <h1 style="font-size:3.1rem;font-weight:900;letter-spacing:1.5px;line-height:1.08;margin-bottom:20px;color:#fff;text-shadow:0 4px 24px #222;">Waste to Gas <span style="font-weight:700;opacity:0.96;color:#fff;">(W2G)</span></h1>
+            <p style="font-size:1.4rem;font-weight:600;margin:20px 0 38px 0;line-height:1.5;color:#fff;text-shadow:0 2px 8px #222;">Transforming waste into <span style="color:#fff;font-weight:700;">clean energy</span> for a sustainable future.</p>
+                        <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:22px;">
+                                <a href="#" class="btn primary" style="min-width:170px;font-size:1.15em;font-weight:600;padding:14px 0;border-radius:12px 32px 12px 32px;background:linear-gradient(90deg,#26C6DA 0%,#388E3C 100%);color:#fff;box-shadow:0 2px 16px #A5D6A7;transition:transform 0.2s;letter-spacing:0.5px;">Get Started</a>
+                        </div>
+        </div>
+        <script>
+        // All Get Started buttons navigate to login page
+        document.addEventListener('DOMContentLoaded', function() {
+            var getStartedBtns = Array.from(document.querySelectorAll('a.btn.primary, button.btn.primary')).filter(function(btn){
+                return btn.textContent.trim().toLowerCase() === 'get started';
+            });
+            getStartedBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'login.html';
+                });
+            });
+        });
+        </script>
+        </div>
+    </header>
+    <section class="about-section">
+            <!-- How It Works Section -->
+            <section class="how-section fade-in-up">
+                <div class="container">
+                    <h2>How It Works</h2>
+                    <div class="about-cards">
+                        <div class="card">
+                            <h3>1. Submit Waste</h3>
+                            <p>Register and schedule your organic waste pickup easily through our platform.</p>
+                        </div>
+                        <div class="card">
+                            <h3>2. Waste Collection</h3>
+                            <p>Our team collects your waste and transports it to our processing facility.</p>
+                        </div>
+                        <div class="card">
+                            <h3>3. Biogas Production</h3>
+                            <p>We convert waste into clean biogas and valuable byproducts using advanced technology.</p>
+                        </div>
+                        <div class="card">
+                            <h3>4. Earn Rewards</h3>
+                            <p>Receive incentives, track your impact, and enjoy affordable, clean energy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <div class="container">
+            <h2>About W2G</h2>
+            <p>W2G is an innovative platform that converts organic waste into biogas, empowering communities and reducing environmental impact. Our mission is to create a circular economy by incentivizing waste collection and providing affordable, clean energy.</p>
+            <div class="about-cards">
+                <div class="card">
+                    <h3>Problem Statement</h3>
+                    <p>Unmanaged organic waste leads to pollution, greenhouse gas emissions, and health hazards in urban and rural areas.</p>
+                </div>
+                <div class="card">
+                    <h3>Proposed Solution</h3>
+                    <p>W2G collects organic waste, processes it into biogas, and distributes clean energy to households and businesses, rewarding contributors with incentives.</p>
+                </div>
+                <div class="card">
+                    <h3>Business Model</h3>
+                    <p>Revenue from gas subscriptions, fertilizer byproducts, and carbon credits. Incentives drive user engagement and waste collection.</p>
+                </div>
+                <div class="card">
+                    <div style="position:relative;">
+                        <h3>Impact Metrics</h3>
+                        <span style="position:absolute;right:12px;top:18px;writing-mode:vertical-rl;letter-spacing:0.1em;font-size:1.05em;color:#bdbdbd;font-weight:600;opacity:0.18;pointer-events:none;user-select:none;">DEMO METRICS</span>
+                    </div>
+                    <div class="impact-charts" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;align-items:center;">
+                        <canvas id="wastePie" width="180" height="180"></canvas>
+                        <canvas id="co2Pie" width="180" height="180"></canvas>
+                        <canvas id="housePie" width="180" height="180"></canvas>
+                        <canvas id="jobsPie" width="180" height="180"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="team-section">
+                <h2>Our Team</h2>
+                <div class="team-cards">
+                    <div class="team-card">
+                        <h4>Sabbir Ahmed</h4>
+                        <p>Founder and head of business and engineer</p>
+                    </div>
+                    <div class="team-card">
+                        <h4>Nazmul Haque Mridha</h4>
+                        <p>Co Founder, head of operations, and engineer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features-section fade-in-up">
+        <div class="container">
+            <h2>Platform Features</h2>
+            <div class="about-cards">
+                <div class="card feature-card">
+                    <h3>Smart Waste Tracking</h3>
+                    <p>Monitor your waste submissions and incentives in real time with our intuitive dashboard.</p>
+                </div>
+                <div class="card feature-card">
+    <!-- Call to Action Section -->
+    <section class="cta-section fade-in-up">
+        <div class="container">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join W2G today and help build a cleaner, greener future for all.</p>
+            <a href="#" class="btn primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+        <section class="partners-section fade-in-up">
+            <div class="container partners-container">
+                <h2 class="partners-title">Our Partners</h2>
+                <div class="partners-grid">
+                    <div class="partner-block">
+                        <div class="partner-logo" style="background:#2E7D32;">
+                            <!-- Municipalities: City/Building Icon -->
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="4" height="10" rx="1.5" fill="#fff"/><rect x="9" y="6" width="6" height="14" rx="1.5" fill="#fff"/><rect x="17" y="13" width="4" height="7" rx="1.5" fill="#fff"/></svg>
+                        </div>
+                        <div class="partner-label">Municipalities</div>
+                    </div>
+                    <div class="partner-block">
+                        <div class="partner-logo" style="background:#A5D6A7;">
+                            <!-- Farms & Livestock: Leaf Icon -->
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 4 7.5 4 13C4 16.3137 7.13401 19 12 19C16.866 19 20 16.3137 20 13C20 7.5 12 2 12 2Z" fill="#388E3C" stroke="#2E7D32" stroke-width="1.5"/><path d="M12 11V15" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="#fff"/></svg>
+                        </div>
+                        <div class="partner-label">Farms & Livestock</div>
+                    </div>
+                    <div class="partner-block">
+                        <div class="partner-logo" style="background:#388E3C;">
+                            <!-- Restaurants & Hotels: Utensils Icon -->
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M7 2v10m0 0c0 2.21-1.79 4-4 4m4-4c2.21 0 4 1.79 4 4m6-14v10m0 0c0 2.21-1.79 4-4 4m4-4c2.21 0 4 1.79 4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="partner-label">Restaurants & Hotels</div>
+                    </div>
+                    <div class="partner-block">
+                        <div class="partner-logo" style="background:#F5F5DC;border:1.5px solid #2E7D32;">
+                            <!-- Sustainability / NGO: Globe/Leaf Icon -->
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#2E7D32" stroke-width="1.5" fill="#A5D6A7"/><path d="M12 6c1.5 2 1.5 10 0 12M6 12c2-1.5 10-1.5 12 0" stroke="#2E7D32" stroke-width="1.5"/></svg>
+                        </div>
+                        <div class="partner-label">Sustainability / NGO Partners</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+        .partners-section {
+            background: #F5F5DC;
+            padding: 56px 0 48px 0;
+        }
+        .partners-title {
+            text-align: center;
+            color: #2E7D32;
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-bottom: 36px;
+            letter-spacing: 1px;
+        }
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .partner-block {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(46,125,50,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 32px 18px 22px 18px;
+            transition: transform 0.18s, box-shadow 0.18s;
+            cursor: pointer;
+        }
+        .partner-block:hover {
+            transform: scale(1.045);
+            box-shadow: 0 6px 28px rgba(46,125,50,0.16);
+        }
+        .partner-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(46,125,50,0.10);
+        }
+        .partner-label {
+            color: #333;
+            font-size: 1.08rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 2px;
+        }
+        @media (max-width: 900px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            .partners-section {
+                padding: 36px 0 28px 0;
+            }
+            .partner-block {
+                padding: 24px 10px 16px 10px;
+            }
+        }
+        </style>
+    </footer>
+</body>
+</html>

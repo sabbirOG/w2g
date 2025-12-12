@@ -1,0 +1,60 @@
+    <script src="../js/auth.js"></script>
+    <script>redirectIfNotLoggedIn();</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2G - Waste Submission</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Poppins:700|Roboto:400|Open+Sans:400&display=swap" rel="stylesheet">
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/submission.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">W2G</div>
+        <ul class="nav-links">
+            <li><a href="waste.html" class="active">Waste Submission</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+            <li><a href="prediction.html">AI Prediction</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" onclick="w2gLogout()">Logout</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+    <main class="form-section">
+        <div class="container">
+            <h2>Submit Your Waste</h2>
+            <form id="wasteForm" class="waste-form">
+                <label for="wasteType">Waste Type</label>
+                <select id="wasteType" name="wasteType" required>
+                    <option value="">Select type</option>
+                    <option value="cow_dung">Cow Dung</option>
+                    <option value="poultry_litter">Poultry Litter</option>
+                    <option value="food_waste">Food Waste</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="amount">Amount (kg)</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+                <label for="pickupDate">Pick-up Date</label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
+                <label for="pickupTime">Pick-up Time</label>
+                <input type="time" id="pickupTime" name="pickupTime" required>
+                <button type="submit" class="btn primary">Submit</button>
+            </form>
+            <div id="submissionResult" class="submission-result"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 W2G. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

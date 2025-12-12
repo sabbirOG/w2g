@@ -1,0 +1,123 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+  background: #F5F5DC; /* Soft beige */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #F5F5DC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 22px 28px 22px;
+  box-shadow: 0 4px 18px rgba(46,125,50,0.10);
+  text-align: center;
+}
+
+.login-card h2 {
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+.login-card p {
+  color: #757575;
+  margin-bottom: 22px;
+  font-size: 0.97rem;
+}
+
+.login-card form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+.login-card form input,
+.login-card form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 1rem;
+}
+
+.login-card form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #2E7D32;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.login-card form button[type="submit"]:hover {
+  background-color: #388E3C;
+}
+
+.demo-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #A5D6A7 0%, #2E7D32 100%);
+  color: #333;
+  border: none;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.demo-btn:hover {
+  background: linear-gradient(90deg, #2E7D32 0%, #A5D6A7 100%);
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    padding: 22px 8px 18px 8px;
+  }
+}

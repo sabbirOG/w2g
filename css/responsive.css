@@ -1,0 +1,69 @@
+@media (max-width: 900px) {
+  .ai-prediction-grid, .ai-extra-info {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+/* Responsive Styles for W2G */
+@media (max-width: 900px) {
+  .container {
+    padding: 24px 8px;
+  }
+  .about-section .about-cards,
+  .dashboard-section .dashboard-cards,
+  .team-cards,
+  .roadmap-section .roadmap-steps {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0 16px;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    display: none;
+    background: #fff;
+    box-shadow: var(--shadow);
+    position: absolute;
+    top: 64px;
+    left: 0;
+    z-index: 99;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 16px;
+  }
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .container {
+    padding: 12px 2px;
+  }
+  .card, .form-section .waste-form, .subscription-section .subscription-card, .contact-section .contact-card, .prediction-section .chart-card {
+    padding: 16px 8px;
+  }
+}

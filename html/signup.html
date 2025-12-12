@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | W2G</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">W2G</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </nav>
+    <main class="form-section">
+        <div class="waste-form card" style="max-width: 340px;">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="signupUsername">Username</label>
+                <input type="text" id="signupUsername" name="signupUsername" required autocomplete="username">
+                <label for="signupPassword">Password</label>
+                <input type="password" id="signupPassword" name="signupPassword" required autocomplete="new-password">
+                <button type="submit" class="btn primary">Sign Up</button>
+            </form>
+            <div id="signupError" class="prediction-result" style="color:#c00;"></div>
+            <div style="margin-top:18px;">
+                <a href="login.html">Already have an account? Login</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 W2G. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

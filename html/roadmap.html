@@ -1,0 +1,67 @@
+    <script src="../js/auth.js"></script>
+    <script>redirectIfNotLoggedIn();</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2G - Roadmap</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Poppins:700|Roboto:400|Open+Sans:400&display=swap" rel="stylesheet">
+    <script defer src="../js/main.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">W2G</div>
+        <ul class="nav-links">
+            <li><a href="waste.html">Waste Submission</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+            <li><a href="prediction.html">AI Prediction</a></li>
+            <li><a href="roadmap.html" class="active">Roadmap</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" onclick="w2gLogout()">Logout</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+    <main class="roadmap-section">
+        <div class="container">
+            <h2>Future Roadmap</h2>
+            <div class="roadmap-steps">
+                <div class="roadmap-card card">
+                    <h3>Pilot Launch</h3>
+                    <p>Deploy W2G in select rural communities to validate the model and gather feedback.</p>
+                </div>
+                <div class="roadmap-card card">
+                    <h3>Semi-Urban Expansion</h3>
+                    <p>Scale operations to semi-urban areas, optimizing logistics and partnerships.</p>
+                </div>
+                <div class="roadmap-card card">
+                    <h3>Urban Rollout</h3>
+                    <p>Introduce W2G to urban centers, integrating with municipal waste systems.</p>
+                </div>
+                <div class="roadmap-card card">
+                    <h3>International Scaling</h3>
+                    <p>Expand to new countries, adapting to local regulations and markets.</p>
+                </div>
+                <div class="roadmap-card card">
+                    <h3>AI Analytics</h3>
+                    <p>Leverage AI for predictive analytics, route optimization, and impact measurement.</p>
+                </div>
+                <div class="roadmap-card card">
+                    <h3>Fertilizer Program</h3>
+                    <p>Launch organic fertilizer initiatives using byproducts from biogas production.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 W2G. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
