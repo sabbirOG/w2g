@@ -10,6 +10,6 @@ W2G is a web platform for managing and incentivizing waste-to-gas conversion. Us
 - Subscription management
 - Roadmap and contact info
 - AI Assistant (coming soon)
-**Note:** Just a prototype for now, built with vibe coding for our Hult Prize competition entry. will implement it manually later.
+- **Note:** Just a prototype for now, built with vibe coding for our Hult Prize competition entry. will implement it manually later.
 ---
 For questions or contributions, visit the [GitHub repo](https://github.com/sabbirOG/w2g).
